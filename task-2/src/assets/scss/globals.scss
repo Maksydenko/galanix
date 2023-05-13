@@ -6,17 +6,11 @@
 // Connection Google fonts
 // &display=swap
 
-// Connection local fonts
-// @import "fonts/fonts";
-
-// Connection icon fonts
-// @import "fonts/icons";
-
 // ============================================================================
 
 // Settings template
 $fontSize: rem(16);
-// $fontFamily: "";
+$fontFamily: "Open Sans";
 
 // Primary colors
 
@@ -70,7 +64,7 @@ $adaptiveType: 1;
 
 // ============================================================================
 
-// Reset
+// Reset styles
 @import "base/reset.scss";
 
 // Body tag styles
