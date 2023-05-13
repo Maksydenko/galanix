@@ -1,0 +1,115 @@
+@import "reset.css";
+
+.flags__container {
+  margin: 0 auto;
+  padding: 20px 15px;
+  max-width: 1170px;
+  background-color: #d3d3d3;
+}
+
+.flags__flag {
+  margin: 0 auto;
+  max-width: 300px;
+  height: 200px;
+}
+
+.flags__flag:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+/* Ukraine */
+
+.flags__flag_ukraine {
+  background: linear-gradient(0deg, #ffd500 50%, #005bbb 50%);
+}
+
+/* Japan */
+
+.flags__flag_japan {
+  background: radial-gradient(circle, #bc002d 30%, #ffffff 30%);
+}
+
+/* Iceland */
+
+.flags__flag_iceland {
+  position: relative;
+  background-color: #ffffff;
+}
+
+/* Red cross */
+
+.flags__flag_iceland::before,
+.flags__flag_iceland::after {
+  content: "";
+  position: absolute;
+  background-color: #dd1832;
+}
+
+.flags__flag_iceland::before {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 30px;
+  border-top-width: 15px;
+  border-bottom-width: 15px;
+}
+
+.flags__flag_iceland::after {
+  left: 28.333%;
+  width: 30px;
+  height: 100%;
+  border-left-width: 15px;
+  border-right-width: 15px;
+}
+
+/* Blue fill */
+
+.flags__flag_iceland span::before,
+.flags__flag_iceland span::after {
+  content: "";
+  position: absolute;
+  height: 75px;
+  background-color: #00519d;
+}
+
+.flags__flag_iceland span::before {
+  top: 0;
+}
+
+.flags__flag_iceland span::after {
+  bottom: 0;
+}
+
+/* Blue squares */
+.flags__flag_iceland span:first-child::before,
+.flags__flag_iceland span:first-child::after {
+  left: 0;
+  width: 25%;
+}
+
+/* Blue rectangles */
+.flags__flag_iceland span:last-child::before,
+.flags__flag_iceland span:last-child::after {
+  right: 0;
+  width: 58.333%;
+}
+
+/* Czech */
+
+.flags__flag_czech {
+  position: relative;
+  background: linear-gradient(0deg, #d7141a 50%, #ffffff 50%);
+}
+
+/* Blue triangle */
+.flags__flag_czech::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-left: 140px solid #11457e;
+}
