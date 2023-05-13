@@ -1,0 +1,107 @@
+// Connection utils
+@import "base/utils.scss";
+// Connection mixins
+@import "base/mixins.scss";
+
+// Connection Google fonts
+// &display=swap
+
+// Connection local fonts
+// @import "fonts/fonts";
+
+// Connection icon fonts
+// @import "fonts/icons";
+
+// ============================================================================
+
+// Settings template
+$fontSize: rem(16);
+// $fontFamily: "";
+
+// Primary colors
+
+$mainColor: #333333;
+$mainBg: #ffffff;
+$scrollColor: #a3a3a3;
+$scrollBg: #f1f1f1;
+
+// ============================================================================
+
+// Adaptive grid settings
+
+// The minimum page width
+$minWidth: 320;
+// The width of the canvas
+$maxWidth: 1920;
+// The width of the limiting container
+$maxWidthContainer: 1170;
+// General indenter
+$containerPadding: 30;
+
+// The width of the first breakpoint
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Breakpoints
+
+// PCs, laptops, some tablets in a horizontal position
+$pc: rem($containerWidth);
+// Tablets, some phones in the horizontal position
+$tablet: rem(991.98);
+// Large phones
+$mobile: rem(767.98);
+// Small phones
+$mobileSmall: rem(479.98);
+
+// Adaptive type:
+// 1 = responsiveness
+// !1 = according to breakpoints
+$adaptiveType: 1;
+
+// Scrollbar styles
+::-webkit-scrollbar {
+  width: rem(10);
+  background-color: $scrollBg;
+
+  &-thumb {
+    border-radius: rem(5);
+    background-color: $scrollColor;
+  }
+}
+
+// ============================================================================
+
+// Reset
+@import "base/reset.scss";
+
+// Body tag styles
+body {
+  // Lock scroll
+  &.lock {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
+}
+
+// Shell wrapper
+#root {
+  min-height: 100%;
+  overflow: hidden;
+
+  @supports (overflow: clip) {
+    overflow: clip;
+  }
+}
+
+// Limiting container
+[class*="__container"] {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0 rem($containerPadding / 2);
+}
+
+// Connecting basic component styles
+@import "base.scss";
+
+// Connecting page styles
+@import "../../components/screens/Home/Home.scss";

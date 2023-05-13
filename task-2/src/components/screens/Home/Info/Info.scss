@@ -1,0 +1,17 @@
+.info {
+  // .info__container
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: rem(70);
+    gap: rem(10);
+  }
+
+  // .info__images-number
+
+  &__images-number {
+  }
+}
