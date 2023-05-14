@@ -8,9 +8,7 @@ import { selectUniversitiesData } from "@/provider/universities/universitiesSlic
 
 import { IUniversity } from "@/interfaces/university.interface";
 
-interface ITableProps {}
-
-const Table: FC<ITableProps> = ({}) => {
+const Table: FC = ({}) => {
   const universitiesData: IUniversity[] | null = useSelector(
     selectUniversitiesData
   );

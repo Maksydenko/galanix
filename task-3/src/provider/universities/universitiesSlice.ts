@@ -8,11 +8,13 @@ import { StatusType } from "@/types/status.type";
 interface IInitialState {
   data: IUniversity[] | null;
   status: StatusType;
+  checked: IUniversity["name"][];
 }
 
 const initialState: IInitialState = {
   data: null,
   status: "idle",
+  checked: [],
 };
 
 export const fetchUniversities = createAsyncThunk(
@@ -27,8 +29,17 @@ const universitiesSlice = createSlice({
   name: "universities",
   initialState,
   reducers: {
+    checkUniversities: (state, action: PayloadAction<IUniversity["name"]>) => {
+      const universityName = action.payload;
+      state.checked.includes(universityName)
+        ? (state.checked = state.checked.filter(
+            (name) => name !== universityName
+          ))
+        : state.checked.push(universityName);
+    },
     clearUniversitiesData: (state) => {
       state.data = null;
+      state.checked = [];
     },
   },
   extraReducers: (builder) => {
@@ -50,7 +61,8 @@ const universitiesSlice = createSlice({
 });
 
 // Actions
-export const { clearUniversitiesData } = universitiesSlice.actions;
+export const { clearUniversitiesData, checkUniversities } =
+  universitiesSlice.actions;
 
 // Selects
 
@@ -64,6 +76,10 @@ export const selectUniversitiesData: ISelect<IInitialState["data"]> = (state) =>
 export const selectUniversitiesStatus: ISelect<IInitialState["status"]> = (
   state
 ) => state.universities.status;
+
+export const selectUniversitiesChecked: ISelect<IInitialState["checked"]> = (
+  state
+) => state.universities.checked;
 
 // Reducer
 export default universitiesSlice.reducer;

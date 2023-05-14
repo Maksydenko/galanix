@@ -1,13 +1,19 @@
 .table {
-  max-width: em(800);
+  max-width: em(850);
   border-collapse: collapse;
   text-align: center;
-  @include responsiveValue("font-size", 16, 10);
+  @include responsiveValue("font-size", 16, 9);
 
   &__head {
   }
 
   &__body {
+  }
+
+  th {
+    @media (min-width: $mobile) {
+      white-space: nowrap;
+    }
   }
 
   th,

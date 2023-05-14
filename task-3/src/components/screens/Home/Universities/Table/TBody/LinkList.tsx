@@ -7,18 +7,16 @@ interface ILinkListProps {
   links: IUniversity["domains" | "web_pages"];
 }
 
-const LinkList: FC<ILinkListProps> = ({ links }) => {
-  return (
-    <ul>
-      {links.map((link, index) => (
-        <li key={index}>
-          <Link href={link} target="_blank">
-            Link
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-};
+const LinkList: FC<ILinkListProps> = ({ links }) => (
+  <ul>
+    {links.map((link, index) => (
+      <li key={index}>
+        <Link href={link} target="_blank">
+          Link
+        </Link>
+      </li>
+    ))}
+  </ul>
+);
 
 export default LinkList;

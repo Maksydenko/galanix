@@ -2,10 +2,10 @@ import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { AppDispatch } from "@/provider/store";
-import {
-  clearUniversitiesData,
-  fetchUniversities,
-} from "@/provider/universities/universitiesSlice";
+import { fetchUniversities } from "@/provider/universities/universitiesSlice";
+
+import Checked from "./Checked";
+import Reset from "./Reset";
 
 interface ISearchProps {}
 
@@ -29,15 +29,6 @@ const Search: FC<ISearchProps> = ({}) => {
     e.preventDefault();
   };
 
-  // Handle submit
-  interface IHandleReset {
-    (): void;
-  }
-  const handleReset: IHandleReset = () => {
-    setCountry("");
-    dispatch(clearUniversitiesData());
-  };
-
   return (
     <section className="search">
       <div className="search__container">
@@ -56,12 +47,8 @@ const Search: FC<ISearchProps> = ({}) => {
             Submit
           </button>
         </form>
-        <button
-          className="search__button search__button_reset"
-          onClick={handleReset}
-        >
-          Reset
-        </button>
+        <Reset setCountry={setCountry} />
+        <Checked />
       </div>
     </section>
   );

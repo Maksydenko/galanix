@@ -4,6 +4,7 @@
   &__container {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: rem(20);
     margin-bottom: rem(20);
   }
@@ -49,5 +50,10 @@
 
     &_reset {
     }
+  }
+
+  // .search__checked
+
+  &__checked {
   }
 }
