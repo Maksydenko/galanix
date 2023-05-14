@@ -139,5 +139,8 @@ body {
 // Connecting layout styles
 @import "@/components/layout/Layout.scss";
 
+// Connecting shared styles
+@import "shared.scss";
+
 // Connecting page styles
 @import "@/components/screens/Home/Home.scss";

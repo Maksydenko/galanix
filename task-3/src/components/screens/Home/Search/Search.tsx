@@ -1,16 +1,19 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { AppDispatch } from "@/provider/store";
 import { fetchUniversities } from "@/provider/universities/universitiesSlice";
+import { selectUniversitiesStatus } from "@/provider/universities/universitiesSlice";
 
 import Checked from "./Checked";
 import Reset from "./Reset";
 
-interface ISearchProps {}
+import { StatusType } from "@/types/status.type";
+import Loader from "@/components/shared/Loader/Loader";
 
-const Search: FC<ISearchProps> = ({}) => {
+const Search: FC = () => {
   const [country, setCountry] = useState("");
+  const universitiesStatus: StatusType = useSelector(selectUniversitiesStatus);
   const dispatch = useDispatch<AppDispatch>();
 
   // Handle change
@@ -49,6 +52,7 @@ const Search: FC<ISearchProps> = ({}) => {
         </form>
         <Reset setCountry={setCountry} />
         <Checked />
+        {universitiesStatus === "loading" && <Loader className="search" />}
       </div>
     </section>
   );
