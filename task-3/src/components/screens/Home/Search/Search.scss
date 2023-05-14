@@ -2,11 +2,10 @@
   // .search__container
 
   &__container {
-    padding-top: rem(20);
-    padding-bottom: rem(20);
     display: flex;
     justify-content: center;
     gap: rem(20);
+    margin-bottom: rem(20);
   }
 
   // .search__form
