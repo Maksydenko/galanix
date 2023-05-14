@@ -1,0 +1,143 @@
+// Connection utils
+@import "base/utils.scss";
+// Connection mixins
+@import "base/mixins.scss";
+
+// Connection Google fonts
+// &display=swap
+
+// ============================================================================
+
+// Settings template
+$fontSize: rem(14);
+// $fontFamily: "";
+
+// Primary colors
+
+$mainColor: #333333;
+$mainBg: #ffffff;
+$scrollColor: #a3a3a3;
+$scrollBg: #f1f1f1;
+
+// ============================================================================
+
+// Adaptive grid settings
+
+// The minimum page width
+$minWidth: 320;
+// The width of the canvas
+$maxWidth: 1920;
+// The width of the limiting container
+$maxWidthContainer: 1170;
+// General indenter
+$containerPadding: 30;
+
+// The width of the first breakpoint
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Breakpoints
+
+// PCs, laptops, some tablets in a horizontal position
+$pc: rem($containerWidth);
+// Tablets, some phones in the horizontal position
+$tablet: rem(991.98);
+// Large phones
+$mobile: rem(767.98);
+// Small phones
+$mobileSmall: rem(479.98);
+
+// Adaptive type:
+// 1 = responsiveness
+// !1 = according to breakpoints
+$adaptiveType: 1;
+
+// Scrollbar styles
+::-webkit-scrollbar {
+  width: rem(10);
+  background-color: $scrollBg;
+
+  &-thumb {
+    border-radius: rem(5);
+    background-color: $scrollColor;
+  }
+}
+
+// ============================================================================
+
+// Reset styles
+@import "base/reset.scss";
+
+// Body tag styles
+body {
+  // Lock scroll
+  &.lock {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
+}
+
+// Shell wrapper
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+
+  @supports (overflow: clip) {
+    overflow: clip;
+  }
+}
+
+// Limiting container
+@if $adaptiveType == 1 {
+  // Responsive
+  [class*="__container"] {
+    @if $maxWidthContainer > 0 {
+      max-width: rem($containerWidth);
+      margin: 0 auto;
+    }
+
+    @if $containerPadding > 0 {
+      @if $maxWidthContainer > 0 {
+        padding: 0 rem($containerPadding / 2);
+      } @else {
+        @include responsiveValue(padding-left, $containerPadding / 2, 15);
+        @include responsiveValue(padding-right, $containerPadding / 2, 15);
+      }
+    }
+  }
+} @else {
+  // According to breakpoints
+  [class*="__container"] {
+    margin: 0 auto;
+
+    @if $maxWidthContainer > 0 {
+      max-width: rem($containerWidth);
+    } @else {
+      @if $containerPadding > 0 {
+        padding: 0 rem($containerPadding / 2);
+      }
+    }
+
+    @media (max-width: $pc) {
+      max-width: rem(970);
+    }
+
+    @media (max-width: $tablet) {
+      max-width: rem(750);
+    }
+
+    @media (max-width: $mobile) {
+      max-width: none;
+    }
+
+    @if $containerPadding > 0 and $maxWidthContainer > 0 {
+      padding: 0 rem($containerPadding / 2);
+    }
+  }
+}
+
+// Connecting layout styles
+@import "@/components/layout/Layout.scss";
+
+// Connecting page styles
+@import "@/components/screens/Home/Home.scss";

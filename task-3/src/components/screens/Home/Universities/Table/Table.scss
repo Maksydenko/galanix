@@ -1,0 +1,30 @@
+.table {
+  max-width: em(800);
+  border-collapse: collapse;
+  text-align: center;
+  @include responsiveValue("font-size", 16, 10);
+
+  &__head {
+  }
+
+  &__body {
+  }
+
+  th,
+  td {
+    padding-top: em(5);
+    padding-bottom: em(5);
+    @include responsiveValue("padding-left", 5, 1);
+    @include responsiveValue("padding-right", 5, 1);
+    border: em(1) solid $mainColor;
+  }
+
+  a {
+    font-style: italic;
+    transition: opacity 0.3s ease 0s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import "Table/Table.scss";
+
+.universities {
+  // .universities__container
+
+  &__container {
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+    @include responsiveValue("padding-left", 15, 5);
+    @include responsiveValue("padding-right", 15, 5);
+  }
+
+  // .universities__table
+
+  &__table {
+    margin: 0 auto;
+  }
+}
