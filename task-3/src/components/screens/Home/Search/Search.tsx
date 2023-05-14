@@ -2,7 +2,10 @@ import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { AppDispatch } from "@/provider/store";
-import { fetchUniversities } from "@/provider/universities/universitiesSlice";
+import {
+  clearUniversitiesData,
+  fetchUniversities,
+} from "@/provider/universities/universitiesSlice";
 
 interface ISearchProps {}
 
@@ -26,8 +29,13 @@ const Search: FC<ISearchProps> = ({}) => {
     e.preventDefault();
   };
 
-  const handleReset = () => {
+  // Handle submit
+  interface IHandleReset {
+    (): void;
+  }
+  const handleReset: IHandleReset = () => {
     setCountry("");
+    dispatch(clearUniversitiesData());
   };
 
   return (

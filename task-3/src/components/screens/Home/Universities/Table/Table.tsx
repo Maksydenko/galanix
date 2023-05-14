@@ -14,9 +14,8 @@ const Table: FC<ITableProps> = ({}) => {
   const universitiesData: IUniversity[] | null = useSelector(
     selectUniversitiesData
   );
-  console.log(universitiesData);
 
-  if (universitiesData?.length !== 0) {
+  if (universitiesData?.length !== 0 && universitiesData !== null) {
     return (
       <table className="universities__table table">
         <THead />

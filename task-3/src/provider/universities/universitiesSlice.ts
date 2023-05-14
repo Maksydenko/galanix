@@ -26,7 +26,11 @@ export const fetchUniversities = createAsyncThunk(
 const universitiesSlice = createSlice({
   name: "universities",
   initialState,
-  reducers: {},
+  reducers: {
+    clearUniversitiesData: (state) => {
+      state.data = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchUniversities.pending, (state) => {
@@ -44,6 +48,9 @@ const universitiesSlice = createSlice({
       });
   },
 });
+
+// Actions
+export const { clearUniversitiesData } = universitiesSlice.actions;
 
 // Selects
 
