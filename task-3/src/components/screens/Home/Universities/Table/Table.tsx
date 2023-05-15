@@ -8,7 +8,7 @@ import { selectUniversitiesData } from "@/provider/universities/universitiesSlic
 
 import { IUniversity } from "@/interfaces/university.interface";
 
-const Table: FC = ({}) => {
+const Table: FC = () => {
   const universitiesData: IUniversity[] | null = useSelector(
     selectUniversitiesData
   );
