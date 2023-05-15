@@ -13,7 +13,11 @@ const TRow: FC<IItemProps> = ({ number, universityData }) => (
   <tr className="table__row">
     <td>{number}</td>
     <td>
-      <LinkList links={universityData.domains} />
+      <ul>
+        {universityData.domains.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
     </td>
     <td>{universityData.country}</td>
     <td>{universityData.alpha_two_code}</td>

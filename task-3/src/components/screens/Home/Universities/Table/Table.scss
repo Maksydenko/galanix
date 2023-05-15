@@ -3,7 +3,7 @@
     max-width: em(850);
     border-collapse: collapse;
     text-align: center;
-    @include responsiveValue("font-size", 16, 10);
+    @include responsiveValue("font-size", 16, 9);
   }
 
   &__loader {
@@ -20,11 +20,11 @@
     @media (min-width: $mobile) {
       white-space: nowrap;
     }
+  }
 
+  td {
     @media (max-width: $mobileSmall) {
-      max-width: em(60);
-      overflow: hidden;
-      text-overflow: ellipsis;
+      word-break: break-word;
     }
   }
 
