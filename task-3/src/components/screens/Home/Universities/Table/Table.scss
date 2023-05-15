@@ -1,8 +1,14 @@
 .table {
-  max-width: em(850);
-  border-collapse: collapse;
-  text-align: center;
-  @include responsiveValue("font-size", 16, 9);
+  &__body {
+    max-width: em(850);
+    border-collapse: collapse;
+    text-align: center;
+    @include responsiveValue("font-size", 16, 10);
+  }
+
+  &__loader {
+    text-align: center;
+  }
 
   &__head {
   }
@@ -13,6 +19,12 @@
   th {
     @media (min-width: $mobile) {
       white-space: nowrap;
+    }
+
+    @media (max-width: $mobileSmall) {
+      max-width: em(60);
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 

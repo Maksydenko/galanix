@@ -11,6 +11,7 @@ import {
 
 import { IUniversity } from "@/interfaces/university.interface";
 import { TypeStatus } from "@/types/status.type";
+import Loader from "@/components/shared/Loader/Loader";
 
 const Table: FC = () => {
   const universitiesData: IUniversity[] | null = useSelector(
@@ -21,10 +22,14 @@ const Table: FC = () => {
   if (universitiesStatus === "succeeded") {
     return (
       <table className="universities__table table">
-        <THead />
-        <TBody universitiesData={universitiesData} />
+        <div className="table__body">
+          <THead />
+          <TBody universitiesData={universitiesData} />
+        </div>
       </table>
     );
+  } else if (universitiesStatus === "loading") {
+    return <Loader className="table" />;
   }
   return null;
 };

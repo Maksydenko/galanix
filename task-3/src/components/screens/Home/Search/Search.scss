@@ -8,7 +8,7 @@
     flex-wrap: wrap;
     gap: rem(20);
     position: relative;
-    margin-bottom: rem(35);
+    margin-bottom: rem(20);
   }
 
   // .search__form
@@ -57,12 +57,5 @@
   // .search__checked
 
   &__checked {
-  }
-
-  &__loader {
-    position: absolute;
-    bottom: -65%;
-    left: 50%;
-    transform: translateX(-50%);
   }
 }

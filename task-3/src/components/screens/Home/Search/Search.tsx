@@ -3,17 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { AppDispatch } from "@/provider/store";
 import { fetchUniversities } from "@/provider/universities/universitiesSlice";
-import { selectUniversitiesStatus } from "@/provider/universities/universitiesSlice";
 
 import Checked from "./Checked";
 import Reset from "./Reset";
-import Loader from "@/components/shared/Loader/Loader";
-
-import { TypeStatus } from "@/types/status.type";
 
 const Search: FC = () => {
   const [country, setCountry] = useState("");
-  const universitiesStatus: TypeStatus = useSelector(selectUniversitiesStatus);
   const dispatch = useDispatch<AppDispatch>();
 
   // Handle change
@@ -52,7 +47,6 @@ const Search: FC = () => {
         </form>
         <Reset setCountry={setCountry} />
         <Checked />
-        {universitiesStatus === "loading" && <Loader className="search" />}
       </div>
     </section>
   );
