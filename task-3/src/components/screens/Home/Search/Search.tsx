@@ -7,13 +7,13 @@ import { selectUniversitiesStatus } from "@/provider/universities/universitiesSl
 
 import Checked from "./Checked";
 import Reset from "./Reset";
-
-import { StatusType } from "@/types/status.type";
 import Loader from "@/components/shared/Loader/Loader";
+
+import { TypeStatus } from "@/types/status.type";
 
 const Search: FC = () => {
   const [country, setCountry] = useState("");
-  const universitiesStatus: StatusType = useSelector(selectUniversitiesStatus);
+  const universitiesStatus: TypeStatus = useSelector(selectUniversitiesStatus);
   const dispatch = useDispatch<AppDispatch>();
 
   // Handle change

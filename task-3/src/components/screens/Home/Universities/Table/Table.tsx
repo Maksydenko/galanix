@@ -4,16 +4,21 @@ import { useSelector } from "react-redux";
 import THead from "./THead";
 import TBody from "./TBody/TBody";
 
-import { selectUniversitiesData } from "@/provider/universities/universitiesSlice";
+import {
+  selectUniversitiesData,
+  selectUniversitiesStatus,
+} from "@/provider/universities/universitiesSlice";
 
 import { IUniversity } from "@/interfaces/university.interface";
+import { TypeStatus } from "@/types/status.type";
 
 const Table: FC = () => {
   const universitiesData: IUniversity[] | null = useSelector(
     selectUniversitiesData
   );
+  const universitiesStatus: TypeStatus = useSelector(selectUniversitiesStatus);
 
-  if (universitiesData?.length !== 0 && universitiesData !== null) {
+  if (universitiesStatus === "succeeded") {
     return (
       <table className="universities__table table">
         <THead />

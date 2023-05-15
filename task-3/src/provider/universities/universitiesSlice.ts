@@ -3,11 +3,11 @@ import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchUniversitiesData } from "./universitiesApi";
 
 import { IUniversity } from "@/interfaces/university.interface";
-import { StatusType } from "@/types/status.type";
+import { TypeStatus } from "@/types/status.type";
 
 interface IInitialState {
   data: IUniversity[] | null;
-  status: StatusType;
+  status: TypeStatus;
   checked: IUniversity["name"][];
 }
 
@@ -39,6 +39,7 @@ const universitiesSlice = createSlice({
     },
     clearUniversitiesData: (state) => {
       state.data = null;
+      state.status = "idle";
       state.checked = [];
     },
   },
@@ -51,7 +52,9 @@ const universitiesSlice = createSlice({
         fetchUniversities.fulfilled,
         (state, action: PayloadAction<any>) => {
           state.data = action.payload;
-          state.status = "succeeded";
+          state.data?.length !== 0
+            ? (state.status = "succeeded")
+            : (state.status = "failed");
         }
       )
       .addCase(fetchUniversities.rejected, (state) => {
