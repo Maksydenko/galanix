@@ -12,7 +12,13 @@
 
 5.  Once the dependencies are installed, start the project by entering the following command:
 
-        npm start (for 3rd: npm run dev)
+    for 2nd:
+
+            npm start
+
+    for 3rd:
+
+        npm run dev
 
 6.  The project will run in the browser at http://localhost:3000/
 
@@ -30,6 +36,12 @@
 
 5.  Після того, як залежності буде встановлено, запустіть проєкт, ввівши наступну команду:
 
-        npm start (for 3rd: npm run dev)
+    для 2-го:
+
+            npm start
+
+    для 3-го:
+
+        npm run dev
 
 6.  Проєкт буде запущено в браузері за адресою http://localhost:3000/
