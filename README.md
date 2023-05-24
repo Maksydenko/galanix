@@ -44,7 +44,7 @@ Flags are placed one below the other with small indents, the size of each flag i
 ## Assignment #3
 
 A small web-application that displays the data obtained from a third-party API.
-Data source: http://universities.hipolabs.com, this is data on universities in different countries. The link https://github.com/Hipo/university-domains-list describes how to use this API.
+Data source: *http://universities.hipolabs.com*, this is data on universities in different countries. The link *https://github.com/Hipo/university-domains-list* describes how to use this API.
 
 The essence of the application is as follows:
 
