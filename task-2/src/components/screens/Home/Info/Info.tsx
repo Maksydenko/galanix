@@ -1,11 +1,11 @@
 import { FC } from "react";
 import Clock from "./Clock";
 
-interface IInfoProps {
+interface InfoProps {
   imagesLength: number;
 }
 
-const Info: FC<IInfoProps> = ({ imagesLength }) => (
+const Info: FC<InfoProps> = ({ imagesLength }) => (
   <section className="info">
     <div className="info__container">
       <div className="info__images-number">

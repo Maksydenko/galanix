@@ -1,17 +1,15 @@
 import { FC } from "react";
 import { IImg } from "../../../interfaces/img.interface";
 
-interface IImgProps {
+interface ImgProps {
   className: string;
   img: IImg;
 }
 
-const Img: FC<IImgProps> = ({ className, img }) => {
-  return (
-    <div className={`${className}__img img`}>
-      <img src={img.src} alt={img.alt} />
-    </div>
-  );
-};
+const Img: FC<ImgProps> = ({ className, img: { src, alt } }) => (
+  <div className={`${className}__img img`}>
+    <img src={src} alt={alt} />
+  </div>
+);
 
 export default Img;

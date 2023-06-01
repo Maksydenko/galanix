@@ -1,15 +1,16 @@
 import { FC } from "react";
 
-import { IImg } from "../../../../interfaces/img.interface";
 import Grid from "./Grid/Grid";
 
-interface IImagesProps {
+import { IImg } from "../../../../interfaces/img.interface";
+
+interface ImagesProps {
   images: IImg[];
   onRestoreImages: () => void;
   onRemoveImage: (id: number) => void;
 }
 
-const Images: FC<IImagesProps> = ({
+const Images: FC<ImagesProps> = ({
   images,
   onRestoreImages,
   onRemoveImage,

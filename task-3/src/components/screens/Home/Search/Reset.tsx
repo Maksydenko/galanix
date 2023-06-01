@@ -3,11 +3,11 @@ import { useDispatch } from "react-redux";
 
 import { clearUniversitiesData } from "@/provider/universities/universitiesSlice";
 
-interface IResetProps {
+interface ResetProps {
   setCountry: Dispatch<SetStateAction<string>>;
 }
 
-const Reset: FC<IResetProps> = ({ setCountry }) => {
+const Reset: FC<ResetProps> = ({ setCountry }) => {
   const dispatch = useDispatch();
 
   // Handle reset

@@ -1,10 +1,10 @@
 import { FC } from "react";
 
-interface ILoaderProps {
+interface LoaderProps {
   className: string;
 }
 
-const Loader: FC<ILoaderProps> = ({ className }) => (
+const Loader: FC<LoaderProps> = ({ className }) => (
   <div className={`${className}__loader loader`}>
     <div className="line"></div>
     <div className="line"></div>

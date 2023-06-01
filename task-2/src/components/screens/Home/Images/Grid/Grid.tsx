@@ -4,12 +4,12 @@ import Item from "./Item";
 
 import { IImg } from "../../../../../interfaces/img.interface";
 
-interface IItemsProps {
+interface ItemsProps {
   images: IImg[];
   onRemoveImage: (id: number) => void;
 }
 
-const Items: FC<IItemsProps> = ({ images, onRemoveImage }) => {
+const Items: FC<ItemsProps> = ({ images, onRemoveImage }) => {
   return (
     <div className="images__grid">
       {images &&

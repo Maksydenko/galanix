@@ -4,12 +4,12 @@ import { IImg } from "../../../../../interfaces/img.interface";
 import Popup from "../../../../../components/base/Popup/Popup";
 import Img from "../../../../../components/base/Img/Img";
 
-interface IItemProps {
+interface ItemProps {
   image: IImg;
   onRemoveImage: (id: number) => void;
 }
 
-const Item: FC<IItemProps> = ({ image, onRemoveImage }) => {
+const Item: FC<ItemProps> = ({ image, onRemoveImage }) => {
   const button = <Img className="images" img={image} />;
 
   const handleClick = () => {
