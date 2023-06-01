@@ -4,10 +4,11 @@ import { IImg } from "../../../interfaces/img.interface";
 interface ImgProps {
   className: string;
   img: IImg;
+  resetStyle?: boolean;
 }
 
-const Img: FC<ImgProps> = ({ className, img: { src, alt } }) => (
-  <div className={`${className}__img img`}>
+const Img: FC<ImgProps> = ({ className, img: { src, alt }, resetStyle }) => (
+  <div className={`${className}__img${resetStyle ? "" : " img"}`}>
     <img src={src} alt={alt} />
   </div>
 );
