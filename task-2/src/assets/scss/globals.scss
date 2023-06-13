@@ -91,7 +91,7 @@ body {
 [class*="__container"] {
   max-width: 80%;
   margin: 0 auto;
-  padding: 0 rem($containerPadding / 2);
+  padding: 0 rem(calc($containerPadding / 2));
 }
 
 // Connecting basic component styles
