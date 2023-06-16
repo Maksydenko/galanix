@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import Items from "./Grid/Grid";
+import Items from "./Items/Items";
 
 import { IImg } from "../../../../interfaces/img.interface";
 
