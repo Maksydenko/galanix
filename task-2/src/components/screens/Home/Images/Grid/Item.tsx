@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 import { IImg } from "../../../../../interfaces/img.interface";
-import Popup from "../../../../../components/base/Popup/Popup";
-import Img from "../../../../../components/base/Img/Img";
+import Popup from "../../../../base/Popup/Popup";
+import Img from "../../../../base/Img/Img";
 
 interface ItemProps {
   image: IImg;

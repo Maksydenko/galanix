@@ -1,11 +1,7 @@
 import { FC } from "react";
 
-interface LoaderProps {
-  className: string;
-}
-
-const Loader: FC<LoaderProps> = ({ className }) => (
-  <div className={`${className}__loader loader`}>
+const Loader: FC = () => (
+  <div className="loader">
     <div className="line"></div>
     <div className="line"></div>
     <div className="line"></div>

@@ -11,7 +11,7 @@ export const useScrollLock: IUseScrollLock = () => {
   const [isScrollLocked, setIsScrollLocked] = useState(false);
 
   useEffect(() => {
-    const body: HTMLElement = document.body;
+    const body = document.body;
 
     if (isScrollLocked) {
       body.classList.add("lock");

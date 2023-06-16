@@ -1,5 +1,10 @@
+.loader {
+  text-align: center;
+}
+
 .line {
   display: inline-block;
+  margin: 0 auto;
   width: rem(15);
   height: rem(15);
   border-radius: rem(15);

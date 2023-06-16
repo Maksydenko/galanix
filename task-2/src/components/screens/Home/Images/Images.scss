@@ -15,7 +15,7 @@
 
     > div:nth-child(4n + 1) {
       img {
-        border-color: red;
+        border-color: #ff0000 !important;
       }
     }
 
@@ -24,7 +24,7 @@
 
       > div:nth-child(2n + 1) {
         img {
-          border-color: red;
+          border-color: #ff0000 !important;
         }
       }
     }
@@ -34,29 +34,31 @@
 
       > div:nth-child(1n + 1) {
         img {
-          border-color: red;
+          border-color: #ff0000 !important;
         }
       }
     }
   }
 
-  // .images__popup-button
+  // .images__popup
 
-  &__popup-button {
-    .images__img {
-      padding-bottom: 100%;
+  &__popup {
+    .popup__button {
+      .images__img {
+        padding-bottom: 100%;
 
-      &:hover {
-        img {
-          transform: rotate(45deg);
-          border-color: #ffff00 !important;
+        &:hover {
+          img {
+            transform: rotate(45deg);
+            border-color: #ffff00 !important;
+          }
         }
-      }
 
-      img {
-        border: rem(5) solid #a9a9a9;
-        border-radius: 50%;
-        transition: all 0.3s ease 0s;
+        img {
+          border: rem(5) solid #a9a9a9;
+          border-radius: 50%;
+          transition: all 0.3s ease 0s;
+        }
       }
     }
   }

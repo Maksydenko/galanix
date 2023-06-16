@@ -29,7 +29,7 @@ const Table: FC = () => {
       </table>
     );
   } else if (universitiesStatus === "loading") {
-    return <Loader className="table" />;
+    return <Loader />;
   }
   return null;
 };

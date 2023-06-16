@@ -10,14 +10,11 @@ interface ItemsProps {
 }
 
 const Items: FC<ItemsProps> = ({ images, onRemoveImage }) => {
-  return (
-    <div className="images__grid">
-      {images &&
-        images.map((image) => (
-          <Item key={image.id} image={image} onRemoveImage={onRemoveImage} />
-        ))}
-    </div>
-  );
+  const items = images.map((image) => (
+    <Item key={image.id} image={image} onRemoveImage={onRemoveImage} />
+  ));
+
+  return <div className="images__grid">{items}</div>;
 };
 
 export default Items;
