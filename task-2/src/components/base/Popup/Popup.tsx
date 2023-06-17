@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 import Body from "./Body";
 
@@ -9,8 +9,8 @@ import { handleClassName } from "../../../utils/className.util";
 interface PopupProps {
   className: string;
   modifier?: string;
-  children: JSX.Element;
-  button: JSX.Element;
+  children: ReactNode;
+  button: ReactNode;
 }
 
 const Popup: FC<PopupProps> = ({ className, modifier, children, button }) => {

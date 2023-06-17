@@ -1,7 +1,7 @@
-import { FC, MouseEvent, useRef } from "react";
+import { FC, ReactNode, MouseEvent, useRef } from "react";
 
 interface BodyProps {
-  children: JSX.Element;
+  children: ReactNode;
   onClick(): void;
 }
 
